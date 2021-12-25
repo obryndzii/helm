@@ -20,6 +20,8 @@ RUN apk add --no-cache ca-certificates \
     rm -rf linux-amd64 && \
     # Init version 2 helm:
     helm init --client-only
+RUN curl -o /usr/bin/aws-iam-authenticator https://amazon-eks.s3-us-west-2.amazonaws.com/1.21.2/2021-07-05/bin/linux/amd64/aws-iam-authenticator
+RUN chmod +x /usr/bin/aws-iam-authenticator
 
 ENV PYTHONPATH "/usr/lib/python3.8/site-packages/"
 
